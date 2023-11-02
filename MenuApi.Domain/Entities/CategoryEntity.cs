@@ -1,8 +1,8 @@
 ﻿namespace MenuApi.Domain.Entities
 {
-    public class Category: BaseEntity
+    public class CategoryEntity: BaseEntity
     {
-        public Category(string name)
+        public CategoryEntity(string name)
         {
             Name = name;
         }
