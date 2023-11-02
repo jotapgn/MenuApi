@@ -8,14 +8,14 @@ namespace MenuApi.Domain.Entities
         {
             Name = name;
             Description = description;
-            Products = new List<Product>();
+            Products = new List<ProductEntity>();
             Status = status;
         }
 
         public string Name { get; private set; }
         public string Description { get; private set; }
         public StatusMenu Status { get; private set; }
-        public List<Product> Products { get; private set; }      
+        public List<ProductEntity> Products { get; private set; }      
         public void Activate()
         {
             Status = StatusMenu.Ative;
