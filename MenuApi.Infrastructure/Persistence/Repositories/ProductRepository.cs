@@ -1,4 +1,5 @@
 ﻿using MenuApi.Domain.Entities;
+using MenuApi.Infrastructure.Persistence.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace MenuApi.Infrastructure.Persistence.Repositories
