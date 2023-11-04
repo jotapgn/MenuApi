@@ -8,5 +8,7 @@ namespace MenuApi.Infrastructure.Persistence.Repositories.Interfaces
         Task<List<MenuEntity>> GetAllAsync();
         Task<MenuEntity?> GetDetailsById(int id);
         Task SaveAsync();
+        Task<MenuEntity?> GetByIdAsync(int id);
+        Task DeleteAsync(int id);
     }
 }

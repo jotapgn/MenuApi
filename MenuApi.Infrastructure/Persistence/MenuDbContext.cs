@@ -6,8 +6,11 @@ namespace MenuApi.Infrastructure.Persistence
 {
     public class MenuDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseSqlite("DataSource=menub.db;Cache=Shared");
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+           var directoryDb = string.Concat(Directory.GetCurrentDirectory(), ".Infrastructure\\");
+            optionsBuilder.UseSqlite($"DataSource={directoryDb}menub.db;Cache=Shared");
+        }
 
         public DbSet<MenuEntity> Menus { get; set; }
         public DbSet<CategoryEntity> Categories { get; set; }
