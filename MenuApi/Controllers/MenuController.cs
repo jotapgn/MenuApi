@@ -55,9 +55,9 @@ namespace MenuApi.Controllers
         [HttpDelete(template: "{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var menu = new DeleteMenuCommand(id);
-            await _mediator.Send(menu);
-            return Ok(menu);
+            var command = new DeleteMenuCommand(id);
+            await _mediator.Send(command);
+            return Ok();
         }
 
     }
