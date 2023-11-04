@@ -7,5 +7,10 @@
             Name = name;
         }
         public string Name { get; private set; }
+
+        public void Update(string name)
+        {
+            this.Name = name;
+        }
     }
 }
