@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.13">
@@ -25,10 +26,6 @@
     <ProjectReference Include="..\MenuApi.Application\MenuApi.Application.csproj" />
     <ProjectReference Include="..\MenuApi.Domain\MenuApi.Domain.csproj" />
     <ProjectReference Include="..\MenuApi.Infrastructure\MenuApi.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
