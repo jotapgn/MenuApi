@@ -2,7 +2,9 @@
 
 namespace MenuApi.Application.ViewModels
 {
+
     public record MenuViewModel
+    
     {
         public MenuViewModel(string name, string description, StatusMenu status)
         {

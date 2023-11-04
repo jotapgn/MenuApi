@@ -2,6 +2,7 @@
 using MenuApi.Application.ViewModels;
 using MenuApi.Infrastructure.Persistence.Repositories.Interfaces;
 
+
 namespace MenuApi.Application.Queries.GetAllMenus
 {
     public class GetAllMenusQueryHandler : IRequestHandler<GetAllMenusQuery, List<MenuViewModel>>
