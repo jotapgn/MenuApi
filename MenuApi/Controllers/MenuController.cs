@@ -1,11 +1,14 @@
 ﻿using MediatR;
 using MenuApi.Application.Commands.CreateMenu;
+using MenuApi.Application.Commands.DeleteMenu;
+using MenuApi.Application.Commands.UpdateMenu;
+using MenuApi.Application.Queries.GetAllMenus;
 using MenuApi.Application.Queries.GetMenuById;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MenuApi.Controllers
 {
-    [Route(template: "api/menus")]
+    [Route(template: "api/menu")]
     public class MenuController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -31,5 +34,31 @@ namespace MenuApi.Controllers
             return Ok(menu);
 
         }
+        [HttpGet()]
+        public async Task<IActionResult> Get()
+        {
+            var query = new GetAllMenusQuery();
+            var menus = await _mediator.Send(query);
+
+            return Ok(menus);
+
+        }
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] UpdateMenuCommand command)
+        {
+           var menu = await _mediator.Send(command);
+           if (menu == null)
+                return NotFound();
+
+           return Ok(menu);
+        }
+        [HttpDelete(template: "{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var menu = new DeleteMenuCommand(id);
+            await _mediator.Send(menu);
+            return Ok(menu);
+        }
+
     }
 }

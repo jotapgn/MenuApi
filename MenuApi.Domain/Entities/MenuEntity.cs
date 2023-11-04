@@ -16,6 +16,12 @@ namespace MenuApi.Domain.Entities
         public string Description { get; private set; }
         public StatusMenu Status { get; private set; }
         public List<ProductEntity> Products { get; private set; }      
+        public void Update(string Name, string desciption, StatusMenu status)
+        {
+            this.Name = Name;
+            this.Description = desciption;
+            this.Status = status;
+        }
         public void Activate()
         {
             Status = StatusMenu.Ative;
