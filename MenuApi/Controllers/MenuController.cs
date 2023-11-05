@@ -16,6 +16,9 @@ namespace MenuApi.Controllers
         {
             _mediator = mediator;
         }
+        /// <remarks>
+        /// Status: 1:Active, 2:Inactive.
+        /// </remarks>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateMenuCommand command)
         {
@@ -43,6 +46,9 @@ namespace MenuApi.Controllers
             return Ok(menus);
 
         }
+        /// <remarks>
+        /// Status: 1:Active, 2:Inactive.
+        /// </remarks>
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] UpdateMenuCommand command)
         {
