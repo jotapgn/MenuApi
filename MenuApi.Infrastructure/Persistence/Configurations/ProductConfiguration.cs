@@ -11,8 +11,8 @@ namespace MenuApi.Infrastructure.Persistence.Configurations
             builder.HasKey(p => p.Id);
 
             builder.HasOne(p => p.Category)
-            .WithOne()
-            .HasForeignKey<ProductEntity>(p => p.CategoryId)
+            .WithMany()
+            .HasForeignKey(p => p.CategoryId)
             .OnDelete(DeleteBehavior.Restrict);
         }
     }

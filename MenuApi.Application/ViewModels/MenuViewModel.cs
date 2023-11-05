@@ -14,7 +14,7 @@ namespace MenuApi.Application.ViewModels
         }
 
         public string Name { get; private set; }
-        public string Description { get; set; }
+        public string Description { get; private set; }
         public StatusMenu Status { get; private set; }
     }
 }
