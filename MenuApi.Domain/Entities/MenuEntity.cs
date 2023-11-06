@@ -26,9 +26,9 @@ namespace MenuApi.Domain.Entities
         {
             Status = StatusMenu.Ative;
         }
-        public void Inativate()
+        public void Inactivate()
         {
-            Status = StatusMenu.Inative;
+            Status = StatusMenu.Inactive;
         }
     }
 }

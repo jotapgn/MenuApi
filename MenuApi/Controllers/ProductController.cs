@@ -28,8 +28,9 @@ namespace MenuApi.Controllers
         public async Task<ActionResult> Put([FromBody] UpdateProductCommand command)
         {
             var product = await _mediator.Send(command);
+
             if (product == null)
-                return null;
+                return NotFound();
 
            return Ok(product);
         }
