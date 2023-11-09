@@ -1,4 +1,8 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MenuApi.Application.Commands.CreateMenu;
+using MenuApi.Application.Validators;
+using MenuApi.Filters;
 using MenuApi.Infrastructure.Persistence;
 using MenuApi.Infrastructure.Persistence.Repositories;
 using MenuApi.Infrastructure.Persistence.Repositories.Interfaces;
@@ -9,7 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining<CreateMenuCommand>());
-builder.Services.AddControllers();
+builder.Services.AddControllers(option => option.Filters.Add(typeof(ValidationFilter)));
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssembly(typeof(CreateCategoryCommandValidator).Assembly);
 builder.Services.AddDbContext<MenuDbContext>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
