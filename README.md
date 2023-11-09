@@ -9,6 +9,7 @@ Web API for menu and product registration.
 * SQLite
 * MediatR
 * CQRS
+* FluentValidation
 * Migrations
 * Swagger
 * DDD
