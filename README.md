@@ -32,4 +32,4 @@ To run the API, execute the command:
 $ dotnet run
 ```
 ## Swagger Documentation
-The API documentation can be found at https://localhost:7200/swagger. Through it, you can view available endpoints and test each route
+The API documentation can be found at https://localhost:7189/swagger. Through it, you can view available endpoints and test each route
