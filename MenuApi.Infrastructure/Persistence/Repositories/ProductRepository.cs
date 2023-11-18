@@ -39,12 +39,7 @@ namespace MenuApi.Infrastructure.Persistence.Repositories
         }
         public async Task DeleteAsync(int id)
         {
-            var product = await GetDetailsById(id);
-            if (product != null)
-            {
-                _context.Products.Remove(product);
-                await _context.SaveChangesAsync();
-            }
+            await _context.Products.Where(p => p.Id == id).ExecuteDeleteAsync();
         }
         public async Task SaveAsync()
         {
