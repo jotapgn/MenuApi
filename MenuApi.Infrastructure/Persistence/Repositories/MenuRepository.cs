@@ -29,12 +29,7 @@ namespace MenuApi.Infrastructure.Persistence.Repositories
         }
         public async Task DeleteAsync(int id)
         {
-            var menu = await GetByIdAsync(id);
-            if (menu != null)
-            {
-                _context.Menus.Remove(menu);
-                await _context.SaveChangesAsync();
-            }      
+            await _context.Menus.Where(m => m.Id == id).ExecuteDeleteAsync();   
         }
         public async Task<MenuEntity?> GetByIdAsync(int id)
         {

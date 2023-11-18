@@ -28,12 +28,7 @@ namespace MenuApi.Infrastructure.Persistence.Repositories
         }
         public async Task DeleteAsync(int id)
         {
-            var category = await GetDetailsById(id);
-            if (category != null)
-            {
-                _context.Categories.Remove(category);
-                await _context.SaveChangesAsync();
-            }
+            await _context.Categories.Where(c => c.Id == id).ExecuteDeleteAsync();
         }
         public async Task SaveAsync()
         {
